@@ -3,4 +3,10 @@ micronaut:
     name: mnStockBroker
   server:
     port: 8081
-
+  hello:
+    controller:
+      path: "/hello"
+    config:
+      greeting:
+        de: ""
+        en: ""

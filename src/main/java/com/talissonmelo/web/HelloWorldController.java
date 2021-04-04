@@ -4,19 +4,16 @@ import com.talissonmelo.service.HelloWorldService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-import javax.inject.Inject;
-
-@Controller
+@Controller("${hello.controller.path:/hello}")
 public class HelloWorldController {
 
-    @Inject
-    private HelloWorldService service;
+    private final HelloWorldService service;
 
-//    public HelloWorldController(HelloWorldService service) {
-//        this.service = service;
-//    }
+    public HelloWorldController(HelloWorldService service) {
+        this.service = service;
+   }
 
-    @Get("/hello")
+    @Get("/")
     public String initial(){
         return service.sayHi();
     }
