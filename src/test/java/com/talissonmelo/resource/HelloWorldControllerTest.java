@@ -30,4 +30,16 @@ class HelloWorldControllerTest {
         Assertions.assertEquals("Olá Mundo.", result);
     }
 
+    @Test
+    void testConfigPort(){
+        final String port = client.toBlocking().retrieve("/hello/port");
+        Assertions.assertEquals("PORTUGUES", port);
+    }
+
+    @Test
+    void testConfigEng(){
+        final String eng = client.toBlocking().retrieve("/hello/en");
+        Assertions.assertEquals("ENGLISH", eng);
+    }
+
 }
