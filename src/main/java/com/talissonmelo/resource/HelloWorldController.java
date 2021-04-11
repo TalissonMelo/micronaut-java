@@ -1,5 +1,6 @@
 package com.talissonmelo.resource;
 
+import com.talissonmelo.model.Greeting;
 import com.talissonmelo.model.GreetingConfig;
 import com.talissonmelo.service.HelloWorldService;
 import io.micronaut.http.annotation.Controller;
@@ -29,5 +30,10 @@ public class HelloWorldController {
     @Get("/en")
     public String en() {
         return config.getEn();
+    }
+
+    @Get("/json")
+    public Greeting json(){
+        return  new Greeting();
     }
 }
